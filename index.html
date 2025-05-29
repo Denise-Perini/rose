@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ROSÈ</title>
+  <link rel="stylesheet" href="stile.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">ROSÈ</div>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#prodotti">Prodotti</a></li>
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="home">
+    <h1>Benvenuto su Rosè</h1>
+    <p>Il tuo angolo digitale dedicato a soluzioni smart per organizzare la casa con stile e semplicità. 
+      Qui trovi prodotti scelti con cura per rendere ogni spazio funzionale e accogliente, 
+      perfetti per chi ama vivere la casa al meglio.</p>
+  </section>
+
+  <section id="prodotti">
+    <h2>Prodotti</h2>
+    <div id="category-filter">
+      <button class="active" data-category="tutti">Tutti</button>
+      <button data-category="essenziali">Essenziali</button>
+      <button data-category="cucina">Cucina</button>
+      <button data-category="bagno">Bagno</button>
+      <button data-category="camera">Camera</button>
+      <button data-category="sala">Sala</button>
+    </div>
+
+   <div id="product-list">
+      <article class="product-card" data-category="cucina">
+        <img src="IMMAGINI/MACCHINA SOTTOVUOTO.jpeg" alt="Macchina Sottovuoto per Alimenti 6 in 1" class="product-image" />
+        <div class="product-content">
+          <h3 class="product-title">Macchina Sottovuoto</h3>
+          <p class="product-description"> Conservazione 10 volte più lunga: sigilla automaticamente mantenendo freschi i cibi senza conservanti.
+            6 modalità di sigillatura + display LED: adatta per alimenti secchi, umidi e super umidi, con taglierina integrata.
+            Sigillo extra largo (30 mm): chiusura sicura, adatta anche a sacchetti spessi e multipli.
+            Alta efficienza: aspira in 10-20 secondi, sigilla in 5-8 secondi, con potenza di 65kpa.
+            Kit incluso: macchina + 10 buste + manuale. Certificata ETL e testata oltre 30.000 volte.</p>
+          <a href="https://amzn.to/4dzxj7r" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Compra su Amazon</a>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="cucina">
+        <img src="IMMAGINI/taglieri in acciao.jpeg" alt="Taglieri in acciaio " class="product-image" />
+        <div class="product-content">
+          <h3 class="product-title">Taglieri in acciaio</h3>
+          <p class="product-description">Tagliere in titanio NATNAV con superficie resistente e antimicrobica, ideale per un uso intenso in cucina. 
+            Il design a doppio lato consente di separare la preparazione di carne e verdure, evitando contaminazioni. 
+            Facile da pulire, non assorbe odori né liquidi e si può appendere grazie alla maniglia integrata. 
+            Protegge i coltelli, mantenendoli affilati più a lungo. 
+            Formato da 34 x 23 cm, adatto anche per campeggio e feste.</p>
+          <a href="https://amzn.to/4dzHLvy" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Compra su Amazon</a>
+        </div>
+      </article>
+
+      <!-- Aggiungi altri prodotti qui -->
+    </div>
+  </section>
+
+  <section id="chi-sono">
+    <h2>Chi sono</h2>
+    <p>Sono appassionata di organizzazione e cura della casa, sempre alla ricerca di prodotti pratici e funzionali che possano semplificare la vita quotidiana. Questo spazio nasce per condividere le mie scoperte e aiutarti a trovare soluzioni semplici ed efficaci per rendere la tua casa più ordinata e confortevole, senza complicazioni.
+
+Qui troverai consigli, idee e prodotti selezionati con attenzione, scelti per accompagnarti in un percorso di benessere domestico.
+
+Benvenuta/o nel nostro angolo dedicato all’organizzazione intelligente!</p>
+  </section>
+
+  <section id="contatti">
+    <h2>Contatti</h2>
+    <form id="contact-form">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="messaggio">Messaggio</label>
+      <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+</main>
+
+<script>
+  // Filtro prodotti per categoria
+  const filterButtons = document.querySelectorAll('#category-filter button');
+  const products = document.querySelectorAll('.product-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Attiva il bottone selezionato
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const cat = button.getAttribute('data-category');
+
+      products.forEach(product => {
+        if (cat === 'tutti' || product.getAttribute('data-category') === cat) {
+          product.style.display = '';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Invio form semplice (solo alert per esempio)
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Grazie per averci contattato! Ti risponderemo al più presto.');
+    form.reset();
+  });
+</script>
+
+</body>
+</html>

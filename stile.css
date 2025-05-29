@@ -1,0 +1,245 @@
+/* Reset base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: hsl(0, 90%, 15%)3;
+  color: hsl(0, 100%, 50%)3;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* Link */
+a {
+  color: rgba(7, 7, 7, 0.877);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover, a:focus {
+  color:hsl(0, 100%, 52%)3;
+  outline: none;
+}
+
+/* Header e Navbar */
+header {
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: hsl(0, 90%, 15%)3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  user-select: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: hsl(0, 90%, 15%)3;
+}
+
+/* Main container */
+main {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color:hsl(0, 90%, 15%);
+  margin-top: 0;
+}
+
+/* Sections */
+section {
+  background-color: hsl(0, 90%, 15%)3;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.05);
+  margin-bottom: 3rem;
+}
+
+/* Home section */
+#home {
+  text-align: center;
+}
+#home p {
+  max-width: 600px;
+  margin: 0.8rem auto 0;
+  color: hsl(0, 90%, 15%)3;
+  font-size: 1.1rem;
+}
+
+/* Prodotti - filtro */
+#category-filter {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#category-filter button {
+  background-color: hsl(0, 0%, 73%);
+  border: none;
+  color: hsl(0, 90%, 15%)3;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 0.5rem 0.5rem 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#category-filter button:hover,
+#category-filter button.active {
+  background-color: #575757;
+  color: white;
+}
+
+/* Prodotti - card */
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0, 90%, 15%)3;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+.product-card:hover,
+.product-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+  outline: none;
+}
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background-color: hsl(0, 90%, 15%)3;
+}
+.product-content {
+  padding: 1rem 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.product-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: #1a73e8;
+}
+.product-description {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.btn-buy {
+  background-color: hsl(0, 90%, 15%)3;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-buy:hover,
+.btn-buy:focus {
+  background-color: #565758;
+  outline: none;
+}
+
+/* Chi sono */
+#chi-sono p {
+  font-size: 1rem;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Contatti */
+#contatti form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+#contatti label {
+  font-weight: 600;
+  color: #333;
+}
+#contatti input[type="text"],
+#contatti input[type="email"],
+#contatti textarea {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+#contatti input[type="text"]:focus,
+#contatti input[type="email"]:focus,
+#contatti textarea:focus {
+  border-color: #4e4e4e;
+  outline: none;
+  box-shadow: 0 0 8px #1a73e8aa;
+}
+#contatti button {
+  background-color: #4f4f4f;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  padding: 0.8rem 0.8rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#contatti button:hover,
+#contatti button:focus {
+  background-color: #343131;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #product-list {
+    grid-template-columns: 1fr;
+  }
+}
